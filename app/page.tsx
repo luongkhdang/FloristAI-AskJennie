@@ -11,14 +11,14 @@ export default function Home() {
             </div>
 
             {/* Background Image */}
-            <div className="relative w-full h-full min-w-[70vw] min-h-[70vh] md:w-[50vw] md:h-[50vh]">
+            <div className="relative w-full h-full min-w-[80vw] min-h-[85vh] md:w-[50vw] md:h-[50vh]  ">
                 <Image
-                    src="/images/background.webp"
+                    src="/images/background1.PNG"
                     alt="Background floral shop"
                     fill
                     style={{ 
                         objectFit: "cover",
-                        objectPosition: "left center"  // Center the image to the left
+                        objectPosition: "20% center"  // Center the image to the left
                     }}
                     quality={100}
                     className="rounded-lg shadow-lg"
