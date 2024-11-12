@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     url: "https://florist-ai-ask-jennie.vercel.app",
     images: [
       {
-        url: "/images/og.webp", // replace with the actual path to your image
+        url: "public/images/og.webp", // replace with the actual path to your image
         width: 1200,
         height: 630,
         alt: "FloristAI",

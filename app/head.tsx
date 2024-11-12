@@ -7,7 +7,7 @@ export default function Head() {
         <meta name="keywords" content="flowers, AI, identification, Ask Jennie, florist" />
         <meta property="og:title" content="FloristAI - Ask Jennie" />
         <meta property="og:description" content="Identify flowers using AI with Jennie, your virtual florist." />
-        <meta property="og:image" content="/images/og-image.png" />
+        <meta property="og:image" content="public/images/og.webp" />
         <meta property="og:url" content="https://florist-ai-ask-jennie.vercel.app" />
         <meta name="twitter:card" content="summary_large_image" />
       </>
