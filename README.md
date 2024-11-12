@@ -1,4 +1,4 @@
-# ![xxxxxxxxxxxxxx (Project 09 - Florist AI)] (https://github.com/luongkhdang/Project-9--Flowers-TypeScript-Shadeui-NyckelAI/blob/master/demo-gif.gif)
+# ![xxxxxxxxxxxxxx (Project 09 - Florist AI)] ([https://github.com/luongkhdang/Project-9--Flowers-TypeScript-Shadeui-NyckelAI/blob/master/demo-gif.gif](https://github.com/luongkhdang/Project-9--Flowers-TypeScript-Shadeui-NyckelAI/demo-gif.gif))
 
 # xxxxxxx
 
