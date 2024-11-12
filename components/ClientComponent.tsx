@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { useSession } from "next-auth/react"; 
 import { useState, useEffect } from "react";
@@ -6,27 +6,33 @@ import Image from 'next/image';
 import { Button } from "@/components/ui/button";
 import { FlowerDescription } from "./FlowerDescription";
 
+
 export default function ClientComponent() {
-  const { data: session, status } = useSession(); 
+  const { status } = useSession(); 
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [isIdentifying, setIsIdentifying] = useState<boolean>(false);
   const [result, setResult] = useState<string | null>(null);
   const [showDescription, setShowDescription] = useState(true);
 
-  // Don't render the content until the session is loaded
-  if (status === "loading") {
-    return <p>Loading...</p>; // Optionally, add a loading indicator here
-  }
-
   function handleImageChange(event: React.ChangeEvent<HTMLInputElement>) {
     const file = event.target.files?.[0];
     if (file) {
       setSelectedImage(file);
+      setPreviewUrl(URL.createObjectURL(file)); // Set preview URL
       setResult(null); // Reset result when a new image is selected
       setShowDescription(true);
     }
   }
+
+  useEffect(() => {
+    // Cleanup the object URL when component unmounts or when `previewUrl` changes
+    return () => {
+      if (previewUrl) {
+        URL.revokeObjectURL(previewUrl);
+      }
+    };
+  }, [previewUrl]);
 
   async function handleIdentify() {
     if (!selectedImage) return;
@@ -69,6 +75,11 @@ export default function ClientComponent() {
     }
   }
 
+  // Display loading until session status is confirmed
+  if (status === "loading") {
+    return <p>Loading...</p>;
+  }
+
   return (
     <main className="absolute top-20  flex flex-col items-center justify-center text-center p-4 space-y-8 bg-white bg-opacity-70 rounded-md w-[60%] max-w-md">
       {/* Title Section */}
@@ -109,9 +120,9 @@ export default function ClientComponent() {
               <Image
                 src={previewUrl}
                 alt="Preview"
-                width={420}
-                height={420}
-                className="rounded-lg shadow-lg object-cover transition-all duration-500 transform hover:scale-110 hover:shadow-xl"
+                width={result ? 42 : 420}
+                height={result ? 42 : 420}
+                className="rounded-lg shadow-md object-cover transition-all duration-500"
                 unoptimized
               />
             </div>

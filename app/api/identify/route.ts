@@ -77,9 +77,12 @@ export async function POST(req: NextRequest) {
 
   } catch (error) {
     console.error("Error in identify route:", error);
+
     return NextResponse.json(
-      { message: "Internal server error", error: error.message },
+      { 
+        message: "Internal server error", 
+        error: error instanceof Error ? error.message : "Unknown error" 
+      },
       { status: 500 }
-    );
-  }
+    );}
 }

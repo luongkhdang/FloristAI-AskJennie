@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
+ 
 
 export default function ImageUpload({ onImageUpload }: { onImageUpload: (file: File) => void }) {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);

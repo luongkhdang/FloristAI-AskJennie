@@ -1,12 +1,24 @@
 import { NextRequest, NextResponse } from "next/server";
-import cloudinary from "cloudinary";
+import * as cloudinary from "cloudinary";
 
 // Configure Cloudinary with your credentials
-cloudinary.config({
+cloudinary.v2.config({
   cloud_name: process.env.CLOUDINARY_NAME,
   api_key: process.env.CLOUDINARY_KEY,
   api_secret: process.env.CLOUDINARY_SECRET,
 });
+
+
+type CloudinaryUploadResult = {
+  secure_url: string;
+  public_id?: string;
+  format?: string;
+  width?: number;
+  height?: number;
+  bytes?: number;
+  // Add other known properties you expect from Cloudinary’s response
+};
+
 
 export async function POST(req: NextRequest) {
   try {
@@ -23,6 +35,11 @@ export async function POST(req: NextRequest) {
     console.log("File received:", file);
 
     // Convert the file to a Buffer
+    if (!(file instanceof File)) {
+      console.error("Uploaded file is not a valid File instance");
+      return NextResponse.json({ message: "Invalid file format" }, { status: 400 });
+    }
+    
     const buffer = await file.arrayBuffer();
 
     // Create a promise-based upload function
@@ -46,7 +63,7 @@ export async function POST(req: NextRequest) {
     });
 
     // Wait for the upload to complete
-    const result = await uploadPromise;
+    const result = await uploadPromise as CloudinaryUploadResult;
     
     // Return the response with the image URL
     return NextResponse.json({ 
@@ -59,7 +76,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(
       { 
         message: "Error uploading image to Cloudinary", 
-        error: error.message 
+        error: error instanceof Error ? error.message : "Unknown error" 
       }, 
       { status: 500 }
     );
