@@ -2,6 +2,11 @@
 import { NextAuthOptions } from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
 
+
+if (process.env.NODE_ENV !== "production") {
+    console.log("NEXTAUTH_SECRET:", process.env.NEXTAUTH_SECRET);
+  }
+  
 export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
@@ -9,5 +14,6 @@ export const authOptions: NextAuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
   ],
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.NEXTAUTH_SECRET!,
+   
 }
