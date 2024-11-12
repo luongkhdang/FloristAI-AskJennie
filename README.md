@@ -1,6 +1,6 @@
 # XXXXXXXXXXX (Project XXX - Basic React + Typescript)
 
-# ![xxxxxxxxxxxxxx (Project 08 - xxxxxx)](demo.JPG)
+# ![xxxxxxxxxxxxxx (Project 08 - Florist AI)] (demo-gif.gif)
 
 # xxxxxxx
 
@@ -37,7 +37,7 @@ xxxxxxxxxxxxxxxxxx
 
 ### Query Filled Form
 
-> > ![](demo2.JPG)
+> > ![](demo-gif.gif)
 
 ## Mobile support
 
