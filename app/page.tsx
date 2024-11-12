@@ -1,6 +1,6 @@
 import Image from "next/image";
 import ClientComponent from "@/components/ClientComponent";
-import LoginButton from "@/components/LoginButton"; // Import LoginButton here
+import LoginButton from "@/components/LoginButton";
 
 export default function Home() {
     return (
@@ -11,12 +11,15 @@ export default function Home() {
             </div>
 
             {/* Background Image */}
-            <div className="relative w-[50vw] h-[50vh]">
+            <div className="relative w-full h-full min-w-[70vw] min-h-[70vh] md:w-[50vw] md:h-[50vh]">
                 <Image
                     src="/images/background.webp"
                     alt="Background floral shop"
                     fill
-                    style={{ objectFit: "cover" }}
+                    style={{ 
+                        objectFit: "cover",
+                        objectPosition: "left center"  // Center the image to the left
+                    }}
                     quality={100}
                     className="rounded-lg shadow-lg"
                     priority
