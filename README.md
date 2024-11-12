@@ -1,6 +1,4 @@
-# XXXXXXXXXXX (Project XXX - Basic React + Typescript)
-
-# ![xxxxxxxxxxxxxx (Project 08 - Florist AI)] (demo-gif.gif)
+# ![xxxxxxxxxxxxxx (Project 09 - Florist AI)] (https://github.com/luongkhdang/Project-9--Flowers-TypeScript-Shadeui-NyckelAI/blob/master/demo-gif.gif)
 
 # xxxxxxx
 
@@ -37,7 +35,6 @@ xxxxxxxxxxxxxxxxxx
 
 ### Query Filled Form
 
-> > ![](demo-gif.gif)
 
 ## Mobile support
 
