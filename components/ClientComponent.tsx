@@ -120,8 +120,8 @@ export default function ClientComponent() {
               <Image
                 src={previewUrl}
                 alt="Preview"
-                width={result ? 42 : 420}
-                height={result ? 42 : 420}
+                width={result ? 42 : 250}
+                height={result ? 42 : 250}
                 className="rounded-lg shadow-md object-cover transition-all duration-500"
                 unoptimized
               />
