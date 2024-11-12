@@ -11,7 +11,7 @@ export default function Home() {
             </div>
 
             {/* Background Image */}
-            <div className="relative w-full h-full min-w-[80vw] min-h-[85vh] md:w-[50vw] md:h-[50vh]  -z-10 ">
+            <div className="relative w-full h-full min-w-[80vw] min-h-[85vh] md:w-[50vw] md:h-[50vh] ">
                 <Image
                     src="/images/background1.PNG"
                     alt="Background floral shop"
