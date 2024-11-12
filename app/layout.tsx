@@ -15,8 +15,23 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Ask Jennie, the florist.",
-  description: "Florist AI",
+  title: "FloristAI - Ask Jennie",
+  description: "AI-powered flower identification app by Jennie.",
+  keywords: ["flowers", "AI", "identification", "Ask Jennie", "florist"],
+  openGraph: {
+    title: "FloristAI - Ask Jennie",
+    description: "Use AI to identify flowers with Jennie, the FloristAI assistant.",
+    url: "https://florist-ai-ask-jennie.vercel.app",
+    images: [
+      {
+        url: "/images/og.webp", // replace with the actual path to your image
+        width: 1200,
+        height: 630,
+        alt: "FloristAI",
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({
