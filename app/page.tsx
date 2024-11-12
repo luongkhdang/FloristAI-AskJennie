@@ -18,7 +18,7 @@ export default function Home() {
                     fill
                     style={{ 
                         objectFit: "cover",
-                        objectPosition: "20% center"  // Center the image to the left
+                        objectPosition: " center"  // Center the image to the left
                     }}
                     quality={100}
                     className="rounded-lg shadow-lg"
